@@ -6,5 +6,5 @@ done
 make install
 notify-send "Built Themer gtk"
 gtkrc-reload
-make THEME="Themer-dark" install
-notify-send "Built Themer-dark gtk"
+#make THEME="Themer-dark" install
+#notify-send "Built Themer-dark gtk"
