@@ -1,11 +1,11 @@
 [Desktop Entry]
 Type=X-GNOME-Metatheme
-Name=Numixsolarized-dark
+Name=Numixnikes-dark
 Comment=A themable modern flat theme
 Encoding=UTF-8
 
 [X-GNOME-Metatheme]
-GtkTheme=Numixsolarized-dark
+GtkTheme=Numixnikes-dark
 IconTheme=Numix
-MetacityTheme=Numixsolarized-dark
+MetacityTheme=Numixnikes-dark
 ButtonLayout=:minimize,maximize,close
