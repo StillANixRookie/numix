@@ -1,10 +1,25 @@
 #!/usr/bin/env bash
 # To run after applying theme
-for i in $(ls /home/gavarch/git/numix/.themer | grep '^template_'); do
-	cp "/home/gavarch/git/numix/.themer/${1}/${i/template_}" "/home/gavarch/git/numix/${i/template_}"
-done
-make install
-notify-send "Built Themer gtk"
-gtkrc-reload
+[[ -d ${HOME}/.themes/${1} ]] || {
+	cp "${HOME}/git/numix/.themer/${1}/Themer.colors" "${HOME}/git/numix/${1}.colors"
+	make THEME="${1}" install
+}
+notify-send "Built Numix-$1 gtk"
+rm "${HOME}/git/numix/${1}.colors"
+
+xfconf-query --create -c xsettings -p /Net/ThemeName \
+	-t string -s "${1}"
+xfconf-query --create -c xsettings -p /Net/IconThemeName \
+	-t string -s "$(themer -v 'gtk-icon')"
+xfconf-query --create -c xsettings -p /Gtk/FontName \
+	-t string -s "$(themer -v 'guifont') 13"
+xfconf-query --create -c xsettings -p /Gtk/MonospaceFontName \
+	-t string -s "$(themer -v 'monofont') 13"
+xfconf-query --create -c xsettings -p /Gtk/CursorThemeName \
+	-t string -s "$(themer -v 'cursor')"
+xfconf-query --create -c xsettings -p /Gtk/CursorThemeSize \
+	-t string -s "48"
+
+#gtkrc-reload
 #make THEME="Themer-dark" install
 #notify-send "Built Themer-dark gtk"

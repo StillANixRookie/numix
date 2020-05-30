@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# To run after applying theme
+for i in $(ls /home/gavarch/git/numix/.themer | grep '^template_'); do
+	cp "/home/gavarch/git/numix/.themer/${1}/${i/template_}" "/home/gavarch/git/numix/${i/template_}"
+done
+make install
+notify-send "Built Themer gtk"
+gtkrc-reload
+#make THEME="Themer-dark" install
+#notify-send "Built Themer-dark gtk"
