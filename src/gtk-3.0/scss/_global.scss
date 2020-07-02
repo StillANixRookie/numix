@@ -3,40 +3,40 @@
 @import "functions";
 
 // default color scheme
-$bg_color: if($variant == "dark",          #fae5d4,          #fae5d4);
-$fg_color: if($variant == "dark",          #8f5c5e,          #8f5c5e);
-$base_color: if($variant == "dark",        #fae5d4,        #fae5d4);
-$text_color: if($variant == "dark",        #8f5c5e,        #8f5c5e);
-$selected_bg_color:      #f0b1a8;
-$selected_fg_color:      #3b4d4f;
-$tooltip_bg_color:      #f0b1a8;
-$tooltip_fg_color:      #3b4d4f;
+$bg_color: if($variant == "dark",          #353633,          #353633);
+$fg_color: if($variant == "dark",          #b6cba0,          #b6cba0);
+$base_color: if($variant == "dark",        #353633,        #353633);
+$text_color: if($variant == "dark",        #b6cba0,        #b6cba0);
+$selected_bg_color:      #58725d;
+$selected_fg_color:      #e6d6ac;
+$tooltip_bg_color:      #58725d;
+$tooltip_fg_color:      #e6d6ac;
 
 // dark colors
-$dark_bg_color: if($variant == 'dark',          #fae5d4,          #fae5d4);
-$dark_fg_color: if($variant == 'dark',          #8f5c5e,          #8f5c5e);
+$dark_bg_color: if($variant == 'dark',          #353633,          #353633);
+$dark_fg_color: if($variant == 'dark',          #b6cba0,          #b6cba0);
 
 // shadows
-$dark_shadow: #fdf6e3;
-$light_shadow: #3b4d4f;
+$dark_shadow: #2A2426;
+$light_shadow: #e6d6ac;
 
 // white and black
-$black: #fdf6e3;
-$white: #3b4d4f;
+$black: #2A2426;
+$white: #e6d6ac;
 
 // misc colors used by gtk+
-$info_fg_color: if($variant == 'dark',     #8f5c5e,     #8f5c5e);
-$info_bg_color: if($variant == 'dark',     #fae5d4,     #fae5d4);
-$warning_fg_color: if($variant == 'dark',  #3b4d4f,  #3b4d4f);
-$warning_bg_color: if($variant == 'dark',  #c49b4a,  #c49b4a);
-$question_fg_color: if($variant == 'dark', #c49b4a, #c49b4a);
-$question_bg_color: if($variant == 'dark', #fae5d4, #fae5d4);
-$error_fg_color: if($variant == 'dark',    #fdf6e3,    #fdf6e3);
-$error_bg_color: if($variant == 'dark',    #d65455,    #d65455);
-$link_color: if($variant == 'dark',        #a38895,        #a38895);
-$success_color: if($variant == 'dark',     #8cb88b,     #8cb88b);
-$warning_color: if($variant == 'dark',     #c49b4a,     #c49b4a);
-$error_color: if($variant == 'dark',       #d65455,       #d65455);
+$info_fg_color: if($variant == 'dark',     #b6cba0,     #b6cba0);
+$info_bg_color: if($variant == 'dark',     #353633,     #353633);
+$warning_fg_color: if($variant == 'dark',  #e6d6ac,  #e6d6ac);
+$warning_bg_color: if($variant == 'dark',  #d9bb80,  #d9bb80);
+$question_fg_color: if($variant == 'dark', #d9bb80, #d9bb80);
+$question_bg_color: if($variant == 'dark', #353633, #353633);
+$error_fg_color: if($variant == 'dark',    #2A2426,    #2A2426);
+$error_bg_color: if($variant == 'dark',    #e68183,    #e68183);
+$link_color: if($variant == 'dark',        #d3a0bc,        #d3a0bc);
+$success_color: if($variant == 'dark',     #87af87,     #87af87);
+$warning_color: if($variant == 'dark',     #d9bb80,     #d9bb80);
+$error_color: if($variant == 'dark',       #e68183,       #e68183);
 
 $toolbar_bg_color: $bg_color;
 $toolbar_fg_color: $fg_color;

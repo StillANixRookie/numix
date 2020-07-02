@@ -1,23 +1,27 @@
 #!/usr/bin/env bash
 # To run after applying theme
-[[ -d ${HOME}/.themes/${1} ]] || {
-	cp "${HOME}/git/numix/.themer/${1}/Themer.colors" "${HOME}/git/numix/${1}.colors"
-	make THEME="${1}" install
-}
-notify-send "Built Numix-$1 gtk"
-rm "${HOME}/git/numix/${1}.colors"
+declare -A TMR
+eval "$(themer --list varsh)"
 
-xfconf-query --create -c xsettings -p /Net/ThemeName \
-	-t string -s "${1}"
-xfconf-query --create -c xsettings -p /Net/IconThemeName \
-	-t string -s "$(themer -v 'gtk-icon')"
-xfconf-query --create -c xsettings -p /Gtk/FontName \
-	-t string -s "$(themer -v 'guifont') 13"
-xfconf-query --create -c xsettings -p /Gtk/MonospaceFontName \
-	-t string -s "$(themer -v 'monofont') 13"
-xfconf-query --create -c xsettings -p /Gtk/CursorThemeName \
-	-t string -s "$(themer -v 'cursor')"
-xfconf-query --create -c xsettings -p /Gtk/CursorThemeSize \
+[[ -d ${HOME}/.themes/${TMR[name]} ]] || {
+	cp "${HOME}/git/numix/.themer/${TMR[name]}/Themer.colors" "${HOME}/git/numix/${TMR[name]}.colors"
+	make THEME="${TMR[name]}" install
+}
+[[ -f ${HOME}/git/numix/${TMR[name]}.colors ]] && \
+	rm "${HOME}/git/numix/${TMR[name]}.colors"
+notify-send "Built Numix-${TMR[name]} gtk"
+
+xfconf-query --create -c xsettings -p /Net/ThemeName 
+	-t string -s "${TMR[name]}"
+xfconf-query --create -c xsettings -p /Net/IconThemeName 
+	-t string -s "${TMR[gtk-icon]}"
+xfconf-query --create -c xsettings -p /Gtk/FontName 
+	-t string -s "${TMR[guifont]} 13"
+xfconf-query --create -c xsettings -p /Gtk/MonospaceFontName 
+	-t string -s "${TMR[monofont]} 13"
+xfconf-query --create -c xsettings -p /Gtk/CursorThemeName 
+	-t string -s "${TMR[cursor]}"
+xfconf-query --create -c xsettings -p /Gtk/CursorThemeSize 
 	-t string -s "48"
 
 #gtkrc-reload
