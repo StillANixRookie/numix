@@ -1,11 +1,11 @@
 [Desktop Entry]
 Type=X-GNOME-Metatheme
-Name=Numixmiramare-dark
+Name=Numixgruvbox-dark
 Comment=A themable modern flat theme
 Encoding=UTF-8
 
 [X-GNOME-Metatheme]
-GtkTheme=Numixmiramare-dark
+GtkTheme=Numixgruvbox-dark
 IconTheme=Numix
-MetacityTheme=Numixmiramare-dark
+MetacityTheme=Numixgruvbox-dark
 ButtonLayout=:minimize,maximize,close

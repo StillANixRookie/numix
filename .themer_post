@@ -11,17 +11,17 @@ eval "$(themer --list varsh)"
 	rm "${HOME}/git/numix/${TMR[name]}.colors"
 notify-send "Built Numix-${TMR[name]} gtk"
 
-xfconf-query --create -c xsettings -p /Net/ThemeName 
+xfconf-query --create -c xsettings -p /Net/ThemeName \
 	-t string -s "${TMR[name]}"
-xfconf-query --create -c xsettings -p /Net/IconThemeName 
+xfconf-query --create -c xsettings -p /Net/IconThemeName \
 	-t string -s "${TMR[gtk-icon]}"
-xfconf-query --create -c xsettings -p /Gtk/FontName 
+xfconf-query --create -c xsettings -p /Gtk/FontName \
 	-t string -s "${TMR[guifont]} 13"
-xfconf-query --create -c xsettings -p /Gtk/MonospaceFontName 
+xfconf-query --create -c xsettings -p /Gtk/MonospaceFontName \
 	-t string -s "${TMR[monofont]} 13"
-xfconf-query --create -c xsettings -p /Gtk/CursorThemeName 
+xfconf-query --create -c xsettings -p /Gtk/CursorThemeName \
 	-t string -s "${TMR[cursor]}"
-xfconf-query --create -c xsettings -p /Gtk/CursorThemeSize 
+xfconf-query --create -c xsettings -p /Gtk/CursorThemeSize \
 	-t string -s "48"
 
 #gtkrc-reload
