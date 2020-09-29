@@ -4,12 +4,11 @@ declare -A TMR
 eval "$(themer --list varsh)"
 
 [[ -d ${HOME}/.themes/${TMR[name]} ]] || {
-	cp "${HOME}/git/numix/.themer/${TMR[name]}/Themer.colors" "${HOME}/git/numix/${TMR[name]}.colors"
+	cp "$USER_REPO_DIR/.themer/${TMR[name]}/Themer.colors" "$USER_REPO_DIR/${TMR[name]}.colors"
 	make THEME="${TMR[name]}" install
 }
-[[ -f ${HOME}/git/numix/${TMR[name]}.colors ]] && \
-	rm "${HOME}/git/numix/${TMR[name]}.colors"
-notify-send "Built Numix-${TMR[name]} gtk"
+[[ -f ${HOME}/git/numix/${TMR[name]}.colors ]] && rm "${HOME}/git/numix/${TMR[name]}.colors"
+herbe "Built Numix-${TMR[name]} gtk"
 
 xfconf-query --create -c xsettings -p /Net/ThemeName         -t string -s "${TMR[name]}"
 xfconf-query --create -c xsettings -p /Net/IconThemeName     -t string -s "${TMR[gtk-icon]}"
