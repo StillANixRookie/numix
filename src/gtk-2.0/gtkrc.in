@@ -540,7 +540,7 @@ style "xfwm-tabwin" {
         Xfwm4TabwinWidget::border-alpha = 1.0
 	Xfwm4TabwinWidget::icon-size = 64
         Xfwm4TabwinWidget::alpha = 1.0
-        Xfwm4TabwinWidget::border-radius = 2
+        Xfwm4TabwinWidget::border-radius = 0
 
 	bg[NORMAL] = @menu_bg_color
 	bg[SELECTED] = @menu_bg_color
